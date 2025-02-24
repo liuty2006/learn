@@ -1,33 +1,35 @@
 #include <iostream>
 using namespace std;
 
-// 类定义
-class Car {
+// 定义一个类表示点
+class Point {
 private:
-    string brand;
-    int year;
+    int x, y;
 
 public:
-    // 构造函数
-    Car(string b, int y) : brand(b), year(y) {}
+    // 构造函数初始化点的位置
+    Point(int xCoord, int yCoord) : x(xCoord), y(yCoord) {}
 
-    // 析构函数
-    ~Car() {
-        cout << "Car object destroyed!" << endl;
+    // 成员函数用于移动点
+    void move(int dx, int dy) {
+        x += dx;
+        y += dy;
     }
 
-    // 成员函数
-    void display() {
-        cout << "Car brand: " << brand << ", Year: " << year << endl;
+    // 成员函数输出点的位置
+    void printPosition() const {
+        cout << "Position: (" << x << ", " << y << ")" << endl;
     }
 };
 
 int main() {
-    // 创建对象
-    Car myCar("Toyota", 2020);
+    // 创建对象 p
+    Point p(0, 0);
+    p.printPosition();  // 输出初始位置
 
-    // 调用成员函数
-    myCar.display();
+    // 移动点
+    p.move(5, 10);
+    p.printPosition();  // 输出新的位置
 
     return 0;
 }
