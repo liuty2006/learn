@@ -1,25 +1,44 @@
+#include <windows.h>
 #include <stdio.h>
 
-// 定义一个结构体表示点
-struct Point {
-    int x;
-    int y;
-};
+void put_clothes() {
+    printf("放衣服\n");
+}
 
-// 函数操作结构体中的数据
-void movePoint(struct Point *p, int dx, int dy) {
-    p->x += dx;
-    p->y += dy;
+void add_detergent() {
+    printf("放洗衣液\n");
+}
+
+void add_water() {
+    printf("注水\n");
+}
+
+void start_washing() {
+    printf("启动洗衣\n");
+}
+
+void wash() {
+    printf("洗\n");
+}
+
+void end_washing() {
+    printf("结束洗衣\n");
+}
+
+void take_clothes() {
+    printf("取衣服\n");
 }
 
 int main() {
-    struct Point p = {0, 0};  // 初始化结构体
-    printf("Initial Position: (%d, %d)\n", p.x, p.y);
-
-    // 移动点
-    movePoint(&p, 5, 10);
-    printf("New Position: (%d, %d)\n", p.x, p.y);
+    SetConsoleOutputCP(65001); // 设置控制台输出编码为 UTF-8
+    // 按照洗衣的步骤进行操作
+    put_clothes();
+    add_detergent();
+    add_water();
+    start_washing();
+    wash();
+    end_washing();
+    take_clothes();
 
     return 0;
 }
-

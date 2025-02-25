@@ -1,36 +1,56 @@
+#include <windows.h>
 #include <iostream>
 using namespace std;
 
-// 定义一个类表示点
-class Point {
-private:
-    int x, y;
-
+// 洗衣机类
+class WashingMachine {
 public:
-    // 构造函数初始化点的位置
-    Point(int xCoord, int yCoord) : x(xCoord), y(yCoord) {}
-
-    // 成员函数用于移动点
-    void move(int dx, int dy) {
-        x += dx;
-        y += dy;
+    void addWater() {
+        cout << "洗衣机: 注水" << endl;
     }
 
-    // 成员函数输出点的位置
-    void printPosition() const {
-        cout << "Position: (" << x << ", " << y << ")" << endl;
+    void startWashing() {
+        cout << "洗衣机: 启动洗衣" << endl;
+    }
+
+    void wash() {
+        cout << "洗衣机: 洗" << endl;
+    }
+
+    void endWashing() {
+        cout << "洗衣机: 结束洗衣" << endl;
+    }
+};
+
+// 人类
+class Person {
+public:
+    void putClothes() {
+        cout << "人: 放衣服" << endl;
+    }
+
+    void addDetergent() {
+        cout << "人: 放洗衣液" << endl;
+    }
+
+    void takeClothes() {
+        cout << "人: 取衣服" << endl;
     }
 };
 
 int main() {
-    // 创建对象 p
-    Point p(0, 0);
-    p.printPosition();  // 输出初始位置
+    SetConsoleOutputCP(65001); // 设置控制台输出编码为 UTF-8
+    Person person;
+    WashingMachine machine;
 
-    // 移动点
-    p.move(5, 10);
-    p.printPosition();  // 输出新的位置
+    // 按顺序执行洗衣过程
+    person.putClothes();
+    person.addDetergent();
+    machine.addWater();
+    machine.startWashing();
+    machine.wash();
+    machine.endWashing();
+    person.takeClothes();
 
     return 0;
 }
-
