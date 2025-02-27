@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(test_3)
+project(test_4_1)
 
 add_compile_options(/utf-8)
 
 set(CMAKE_CXX_STANDARD 11)
 
-add_executable(test_3 main.cpp)
+add_executable(test_4_1 main.cpp)
 

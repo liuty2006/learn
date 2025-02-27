@@ -1,12 +1,28 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    float f = 3.14f;      // 单精度浮点数
-    double d = 3.14159;   // 双精度浮点数
+// 枚举类型
+enum Weekday { Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday };
 
-    cout << "f = " << f << endl;
-    cout << "d = " << d << endl;
+// 宏定义
+#define PI 3.14159
+
+int main() {
+    // ============== 常量 ===================
+    const int MAX_VALUE = 100;  // 常量
+    // MAX_VALUE = 200;  // 编译错误，不能修改常量
+
+    cout << "MAX_VALUE = " << MAX_VALUE << endl;
+
+    // ============== 宏定义 ===================
+
+    cout << "PI = " << PI << endl;
+
+
+    // ============== 枚举类型 ===================
+    Weekday today = Wednesday;
+
+    cout << "Today is day number: " << today << endl;  // 输出数字，默认从 0 开始
 
     return 0;
 }
