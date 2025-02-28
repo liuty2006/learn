@@ -5,11 +5,11 @@ using namespace std;
 int main() {
     // C 风格字符串
     char cStr[] = "Hello, World!";
-    cout << "C-style string: " << cStr << endl;
+    cout << "C-style string: " << cStr <<  " - " << sizeof(cStr) << endl;
 
     // C++ 风格字符串
     string cppStr = "Hello, World!";
-    cout << "C++-style string: " << cppStr << endl;
+    cout << "C++-style string: " << cppStr <<  " - " << sizeof(cppStr) << " - " << cppStr.size() << endl;
 
     // 修改 C 风格字符串
     cStr[0] = 'h';  // 直接修改字符数组
