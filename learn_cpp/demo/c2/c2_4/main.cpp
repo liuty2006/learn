@@ -21,7 +21,10 @@ void demoFunction() {
     cout << "Dynamic Variable: " << *dynamicVar << endl;
 
     // 修改变量的值
+    globalVar++;
+    localVar++;
     staticVar++;  // 静态变量保持其值
+    (*dynamicVar)++;
     delete dynamicVar;  // 释放动态变量的内存
 }
 

@@ -3,8 +3,8 @@ using namespace std;
 
 // 定义一个结构体表示点
 struct Point {
-    int x;
-    int y;
+    int x;  // 4 bytes
+    int y;  // 4 bytes
 };
 
 int main() {
@@ -12,7 +12,7 @@ int main() {
     Point p1 = {10, 20};
 
     // 访问结构体成员
-    cout << "Point p1: (" << p1.x << ", " << p1.y << ")" << endl;
+    cout << "Point p1: (" << p1.x << ", " << p1.y << ")" << " - " << sizeof(p1) << endl;
 
     // 修改结构体成员
     p1.x = 30;
