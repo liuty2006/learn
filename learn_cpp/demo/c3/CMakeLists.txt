@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.12)
 project(c3)
-
+add_subdirectory(c3_1)
 add_subdirectory(c3_2_1)
 add_subdirectory(c3_2_2)
 add_subdirectory(c3_2_3)
