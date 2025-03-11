@@ -1,16 +1,15 @@
 #include <iostream>
 using namespace std;
 
-// 计算阶乘的递归函数
-int factorial(int n) {
-    if (n == 0)  // 基准情况
-        return 1;
-    else
-        return n * factorial(n - 1);  // 递归调用
-}
-
 int main() {
-    int num = 5;
-    cout << "Factorial of " << num << " is " << factorial(num) << endl;
+    int arr[3][3] = { {1, 2, 3}, {4, 5, 6}, {7, 8, 9} };
+
+    // 输出二维数组元素
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << "arr[" << i << "][" << j << "] = " << arr[i][j] << endl;
+        }
+    }
+
     return 0;
 }

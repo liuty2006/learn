@@ -1,19 +1,17 @@
 #include <iostream>
 using namespace std;
 
-// 使用指针遍历数组并计算总和
-int sumArray(int* arr, int size) {
-    int sum = 0;
-    for (int i = 0; i < size; i++) {
-        sum += *(arr + i);  // 通过指针访问数组元素
-    }
-    return sum;
+// 重载函数
+int add(int a, int b) {
+    return a + b;
+}
+
+double add(double a, double b) {
+    return a + b;
 }
 
 int main() {
-    int numbers[] = {1, 2, 3, 4, 5};
-    int size = sizeof(numbers) / sizeof(numbers[0]);
-
-    cout << "sum of array: " << sumArray(numbers, size) << endl;
+    cout << "Sum of integers: " << add(3, 4) << endl;
+    cout << "Sum of doubles: " << add(3.5, 4.5) << endl;
     return 0;
 }

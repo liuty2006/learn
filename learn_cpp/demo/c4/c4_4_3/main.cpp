@@ -1,14 +1,18 @@
 #include <iostream>
 using namespace std;
 
-int main() {
-    int arr[3] = {10, 20, 30};
-    int* ptr = arr;  // 数组名自动转换为指针
-
-    // 使用指针访问数组元素
-    for (int i = 0; i < 3; i++) {
-        cout << "arr[" << i << "] = " << *(ptr + i) << endl;  // 指针加偏移量
+// 传递二维数组（必须指定列数）
+void printMatrix(int matrix[][3], int rows) {
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < 3; j++) {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
     }
+}
 
+int main() {
+    int matrix[2][3] = {{1, 2, 3}, {4, 5, 6}};
+    printMatrix(matrix, 2);
     return 0;
 }
