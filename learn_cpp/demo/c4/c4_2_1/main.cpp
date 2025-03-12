@@ -1,13 +1,26 @@
 #include <iostream>
-using namespace std;
+#include <windows.h>
 
-// 定义一个加法函数
-int add(int a, int b) {
-    return a + b;
+void b() {
+    std::cout << "进入 b 函数" << std::endl;
+    std::cout << "执行 b 函数" << std::endl;
+    std::cout << "退出 b 函数" << std::endl;
+}
+
+void a() {
+    std::cout << "进入 a 函数" << std::endl;
+    std::cout << "调用 b 函数" << std::endl;
+    b();  // 调用 b 函数
+    std::cout << "执行 a 函数" << std::endl;
+    std::cout << "退出 a 函数" << std::endl;
 }
 
 int main() {
-    int result = add(3, 4);  // 调用函数
-    cout << "Result: " << result << endl;
+    SetConsoleOutputCP(65001); // 设置控制台输出编码为 UTF-8
+    std::cout << "进入 main 函数" << std::endl;
+    std::cout << "调用 a 函数" << std::endl;
+    a();  // 调用 a 函数
+    std::cout << "执行 main 函数" << std::endl;
+    std::cout << "退出 main 函数" << std::endl;
     return 0;
 }
