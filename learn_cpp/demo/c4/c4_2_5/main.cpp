@@ -16,7 +16,7 @@ public:
 // 按引用传递（不会复制对象）
 void modifyStudent(Student& s) {
     s.age += 1;  // 修改年龄
-    cout << "modify - name: " << s.name << ", age: " << s.age << endl;
+    cout << "modified - name: " << s.name << ", age: " << s.age << endl;
 }
 
 int main() {
