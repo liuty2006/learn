@@ -7,7 +7,7 @@ void printMessage(string msg) { // 按值传递
 }
 
 void modifyMessage(string& msg) { // 按引用传递
-    msg += " Have a great day!";
+    msg += " Have a great day!";    // 简单明了!!
 }
 
 int main() {
