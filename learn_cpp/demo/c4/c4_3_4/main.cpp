@@ -9,7 +9,7 @@ struct Student {
 };
 
 // 打印学生信息及其地址
-void printStudents(const Student students[], int size) {
+void printStudents(const Student students[], int size) {        // 使用 const 保护数据，避免误修改
     for (int i = 0; i < size; i++) {
         cout << "Student " << i + 1 << " (Address: " << &students[i] << "):" << endl;
         cout << "  Name: " << students[i].name << endl;
