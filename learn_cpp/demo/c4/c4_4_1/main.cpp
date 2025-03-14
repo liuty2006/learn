@@ -2,7 +2,7 @@
 using namespace std;
 
 // 使用指针遍历数组并计算总和
-int sumArray(int* arr, int size) {
+int sumArray(const int* arr, int size) {  // 使用 const 保护数组参数
     int sum = 0;
     for (int i = 0; i < size; i++) {
         sum += *(arr + i);  // 通过指针访问数组元素
