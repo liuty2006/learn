@@ -14,7 +14,7 @@ int main() {
 
     modifyArray(numbers, size); // 传递数组指针
 
-    cout << "修改后的数组: ";
+    cout << "modify array: ";
     for (int i = 0; i < size; i++) {
         cout << numbers[i] << " ";
     }
