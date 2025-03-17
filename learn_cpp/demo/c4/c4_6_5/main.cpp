@@ -32,6 +32,12 @@ void sortArray(int arr[], int size, Operation op) {
                 swap(arr[j], arr[j + 1]);  // 交换元素
             }
         }
+
+        // 打印当前数组状态
+        for (int k = 0; k < size; k++) {
+            cout << arr[k] << " ";
+        }
+        cout << endl;
     }
 }
 #endif
