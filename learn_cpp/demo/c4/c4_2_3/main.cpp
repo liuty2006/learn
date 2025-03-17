@@ -10,7 +10,7 @@ struct Student {
 
 // 按值传递结构体（不会修改原始数据）
 void printStudent(Student s) {
-#if 0
+#if 1
     s.age += 1;  // 修改年龄
     s.grade += 5; // 提高成绩
 #endif

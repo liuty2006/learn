@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+typedef bool (*Operation)(int, int); // 定义函数指针类型
+
 // 比较函数：升序排序
 bool ascending(int a, int b) {
     return a > b;  // 如果 a > b，则交换（从小到大）
@@ -12,6 +14,7 @@ bool descending(int a, int b) {
 }
 
 // 排序函数（使用回调函数）
+#if 0
 void sortArray(int arr[], int size, bool (*compare)(int, int)) {
     for (int i = 0; i < size - 1; i++) {
         for (int j = 0; j < size - i - 1; j++) {
@@ -21,7 +24,17 @@ void sortArray(int arr[], int size, bool (*compare)(int, int)) {
         }
     }
 }
-
+#else
+void sortArray(int arr[], int size, Operation op) {
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = 0; j < size - i - 1; j++) {
+            if (op(arr[j], arr[j + 1])) {
+                swap(arr[j], arr[j + 1]);  // 交换元素
+            }
+        }
+    }
+}
+#endif
 // 打印数组
 void printArray(int arr[], int size) {
     for (int i = 0; i < size; i++) {

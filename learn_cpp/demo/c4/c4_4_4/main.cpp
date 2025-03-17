@@ -2,7 +2,7 @@
 using namespace std;
 
 // 通过指针修改数组中的元素
-void modifyArray(int* arr, int size) {
+void modifyArray(int* arr, int size) {      // const - 不可以使用!!
     for (int i = 0; i < size; i++) {
         *(arr + i) *= 2;  // 每个元素翻倍
     }
