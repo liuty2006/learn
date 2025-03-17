@@ -13,7 +13,7 @@ bool descending(int a, int b) {
     return a < b;  // 如果 a < b，则交换（从大到小）
 }
 
-// 排序函数（使用回调函数）
+// 排序函数（使用回调函数） - 采用 冒泡排序 逻辑
 #if 0
 void sortArray(int arr[], int size, bool (*compare)(int, int)) {
     for (int i = 0; i < size - 1; i++) {
