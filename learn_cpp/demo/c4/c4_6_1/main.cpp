@@ -1,36 +1,17 @@
 #include <iostream>
 using namespace std;
 
-// 计算阶乘的递归函数
-int factorial(int n) {
-    if (n == 0){  // 基准情况
-        return 1;
-    }
-    else{
-        return n * factorial(n - 1);  // 递归调用
-    }
+// 一个普通的加法函数
+int add(int a, int b) {
+    return a + b;
 }
 
 int main() {
-    int num = 5;
-    cout << "Factorial of " << num << " is " << factorial(num) << endl;
+    // 定义函数指针并指向 add 函数
+    int (*funcPtr)(int, int) = add;
+
+    // 通过函数指针调用函数 - 函数指针 funcPtr 指向 add，并通过 funcPtr(3, 5) 调用它
+    cout << "Result: " << funcPtr(3, 5) << endl;
+
     return 0;
 }
-
-#if 0
-int factorial(int n) {
-    if (n == 0) {  // 基本情况
-        return 1;
-    } else {
-        int result = n * factorial(n - 1);  // 递归调用
-        cout << "Returning: " << n << " * factorial(" << n-1 << ") = " << result << endl;
-        return result;
-    }
-}
-
-int main() {
-    int num = 5;
-    cout << "Final Result: " << factorial(num) << endl;
-    return 0;
-}
-#endif
