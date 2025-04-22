@@ -1,59 +1,60 @@
 #include <iostream>
+#include <string>
 using namespace std;
 #include <windows.h>
 
-// 抽象类（含纯虚函数）
-class Animal {
+class Person {
 public:
-    // 虚函数：可以被派生类重写
-    virtual void speak() const = 0; // 纯虚函数：没有函数体，= 0
+    string name;  // 公有成员，外部可以访问
 
-    // 虚析构函数，避免内存泄漏
-    virtual ~Animal() {
-        cout << "Animal 析构函数调用。" << endl;
+    Person(string n, int a) {
+        name = n;
+        setAge(a);  // 调用私有函数
     }
+
+    void introduce() {
+        cout << "大家好，我是 " << name << "，今年 " << age << " 岁。" << endl;
+    }
+
+    void setAge(int a) {
+        if (a >= 0 && a <= 150) {
+            age = a;
+        } else {
+            cout << "年龄设置无效，必须在 0~150 之间。" << endl;
+        }
+    }
+
+    int getAge() {
+        return age;
+    }
+
+private:
+    int age;  // 私有成员，外部无法访问
+
+protected:
+    string secret = "这是一个保护成员";  // 受保护成员，仅子类可访问
 };
 
-// 派生类：Dog
-class Dog : public Animal {
+// 子类可以访问 protected 成员
+class Student : public Person {
 public:
-    void speak() const override {
-        cout << "狗：汪汪！" << endl;
-    }
+    Student(string n, int a) : Person(n, a) {}
 
-    ~Dog() {
-        cout << "Dog 析构函数调用。" << endl;
+    void revealSecret() {
+        cout << name << " 的秘密是：" << secret << endl;
     }
 };
-
-// 派生类：Cat
-class Cat : public Animal {
-public:
-    void speak() const override {
-        cout << "猫：喵喵！" << endl;
-    }
-
-    ~Cat() {
-        cout << "Cat 析构函数调用。" << endl;
-    }
-};
-
-// 多态调用函数
-void makeAnimalSpeak(const Animal* animal) {
-    animal->speak(); // 运行时多态：根据实际对象调用对应的函数
-}
 
 int main() {
     SetConsoleOutputCP(65001); // 设置控制台输出编码为 UTF-8
-    Animal* a1 = new Dog();  // 基类指针指向派生类对象
-    Animal* a2 = new Cat();
+    Person p("小明", 20);
+    p.introduce();
+    // cout << p.age;      // ❌ 错误：无法访问私有成员
+    // cout << p.secret;   // ❌ 错误：无法访问保护成员
 
-    makeAnimalSpeak(a1);
-    makeAnimalSpeak(a2);
-
-    // 释放内存，触发析构链
-    delete a1;
-    delete a2;
+    Student s("小红", 18);
+    s.introduce();
+    s.revealSecret();  // 子类访问 protected 成员
 
     return 0;
 }
