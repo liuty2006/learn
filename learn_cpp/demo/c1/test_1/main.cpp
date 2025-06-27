@@ -1,4 +1,4 @@
-#include <windows.h>
+//#include <windows.h>
 #include <iostream>
 using namespace std;
 
@@ -39,7 +39,7 @@ public:
 };
 
 int main() {
-    SetConsoleOutputCP(65001); // 设置控制台输出编码为 UTF-8
+    //SetConsoleOutputCP(65001); // 设置控制台输出编码为 UTF-8
     Person person;
     WashingMachine machine;
 

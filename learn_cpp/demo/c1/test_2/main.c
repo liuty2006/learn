@@ -1,4 +1,4 @@
-#include <windows.h>
+//#include <windows.h>
 #include <stdio.h>
 
 void put_clothes() {
@@ -30,7 +30,7 @@ void take_clothes() {
 }
 
 int main() {
-    SetConsoleOutputCP(65001); // 设置控制台输出编码为 UTF-8
+    //SetConsoleOutputCP(65001); // 设置控制台输出编码为 UTF-8
     // 按照洗衣的步骤进行操作
     put_clothes();
     add_detergent();
