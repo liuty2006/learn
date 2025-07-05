@@ -45,6 +45,7 @@ public:
 };
 
 int main() {
+
     Person p("小明", 20);
     p.introduce();
     // cout << p.age;      // ❌ 错误：无法访问私有成员
