@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 using namespace std;
-//#include <windows.h>
 
 class Person {
 public:
@@ -46,7 +45,6 @@ public:
 };
 
 int main() {
-    //SetConsoleOutputCP(65001); // 设置控制台输出编码为 UTF-8
     Person p("小明", 20);
     p.introduce();
     // cout << p.age;      // ❌ 错误：无法访问私有成员
