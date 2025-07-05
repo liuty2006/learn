@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-//#include <windows.h>
 
 // 抽象类（含纯虚函数）
 class Animal {
@@ -44,7 +43,6 @@ void makeAnimalSpeak(const Animal* animal) {
 }
 
 int main() {
-    //SetConsoleOutputCP(65001); // 设置控制台输出编码为 UTF-8
     Animal* a1 = new Dog();  // 基类指针指向派生类对象
     Animal* a2 = new Cat();
 
