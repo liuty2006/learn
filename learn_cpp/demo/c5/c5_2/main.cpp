@@ -1,7 +1,6 @@
 #include <iostream>
 #include <string>
 using namespace std;
-//#include <windows.h>
 
 class Person {
 private:
@@ -28,7 +27,6 @@ public:
 };
 
 int main() {
-    //SetConsoleOutputCP(65001); // 设置控制台输出编码为 UTF-8
     // 创建对象
     Person person1("小明", 20);
     person1.introduce();
@@ -36,3 +34,4 @@ int main() {
     // 当 main 函数结束时，person1 会自动被销毁，触发析构函数
     return 0;
 }
+// 
