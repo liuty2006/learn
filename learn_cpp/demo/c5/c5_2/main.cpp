@@ -27,9 +27,14 @@ public:
 };
 
 int main() {
-    // 创建对象
+    // 创建对象 - 栈
     Person person1("小明", 20);
     person1.introduce();
+
+    // new - 堆
+    Person *pPersion = new Person("小明2", 20);
+    pPersion->introduce();
+    delete pPersion;  // 不会自动析构!!
 
     // 当 main 函数结束时，person1 会自动被销毁，触发析构函数
     return 0;
